@@ -240,6 +240,7 @@ SteamTradeOffers.prototype.getOffer = function(options, callback) {
           callback(error);
         }
       } else {
+        console.log('GOT:', require('util').inspect(res.response, {depth: null}));
         res.response.offer.steamid_other = toSteamId(res.response.offer.accountid_other);
         if(typeof callback == 'function'){
           callback(null, res);
